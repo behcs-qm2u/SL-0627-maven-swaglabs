@@ -1,0 +1,20 @@
+Note: 27Jun21
+
+//*[text()='Sauce Labs Bike Light']//following::button[1]
+
+
+Selenium Grid
+==============
+download selenium standaloe
+
+java -jar selenium-server-standalone-3.141.59.jar -role hub
+
+goto <ip>:4444/grid/console
+
+
+java -Dwebdriver.chrome.driver="chromedriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register/
+
+
+
+//div[@class="inventory_item_name"]//following::div[1]
+

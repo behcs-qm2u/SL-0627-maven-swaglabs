@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="4" total="7" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="8261" started-at="2021-06-27T18:47:40 MYT" finished-at="2021-06-27T18:47:48 MYT">
+    <groups>
+      <group name="productGrp">
+        <method signature="ProductSelectionTest.testcase1b()[pri:0, instance:test.ProductSelectionTest@12f41634]" name="testcase1b" class="test.ProductSelectionTest"/>
+      </group> <!-- productGrp -->
+      <group name="loginGrp">
+        <method signature="LoginTest.LoginTestcase2()[pri:0, instance:test.LoginTest@5f3a4b84]" name="LoginTestcase2" class="test.LoginTest"/>
+      </group> <!-- loginGrp -->
+    </groups>
+    <test name="Test" duration-ms="8261" started-at="2021-06-27T18:47:40 MYT" finished-at="2021-06-27T18:47:48 MYT">
+      <class name="test.LoginTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.LoginTest@5f3a4b84]" name="setup" is-config="true" duration-ms="3326" started-at="2021-06-27T18:47:40 MYT" finished-at="2021-06-27T18:47:44 MYT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="LoginTestcase2()[pri:0, instance:test.LoginTest@5f3a4b84]" name="LoginTestcase2" duration-ms="825" started-at="2021-06-27T18:47:44 MYT" description="Login using uname &amp; pass from xlsx" finished-at="2021-06-27T18:47:44 MYT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTestcase2 -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:test.LoginTest@5f3a4b84]" name="teardown" is-config="true" duration-ms="3636" started-at="2021-06-27T18:47:45 MYT" finished-at="2021-06-27T18:47:48 MYT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- test.LoginTest -->
+      <class name="test.ProductSelectionTest">
+        <test-method status="PASS" signature="testcase1b()[pri:0, instance:test.ProductSelectionTest@12f41634]" name="testcase1b" duration-ms="226" depends-on-groups="loginGrp" started-at="2021-06-27T18:47:44 MYT" description="Add specific item to cart" finished-at="2021-06-27T18:47:45 MYT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testcase1b -->
+        <test-method status="PASS" signature="testcase2()[pri:0, instance:test.ProductSelectionTest@12f41634]" name="testcase2" duration-ms="190" depends-on-groups="productGrp" started-at="2021-06-27T18:47:45 MYT" description="Verify the specific item added to cart" finished-at="2021-06-27T18:47:45 MYT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testcase2 -->
+      </class> <!-- test.ProductSelectionTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
