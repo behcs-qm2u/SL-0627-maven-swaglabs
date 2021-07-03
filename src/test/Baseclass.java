@@ -41,18 +41,16 @@ public class Baseclass {
 	public static XSSFWorkbook wbook;
 	public static XSSFSheet sheet;
 	
-	@BeforeTest(enabled=true)
-	public void remoteSetup() throws MalformedURLException, IOException {
-		
-		DesiredCapabilities cap = new DesiredCapabilities();
-		
-		cap.setPlatform(Platform.LINUX);
-		cap.setBrowserName("chrome");
-		// cap.setBrowserName("firefox");
+
+	@BeforeTest(enabled=true, description="Setup the webdriver, either local or grid")
+	public void Setup() throws MalformedURLException, IOException {
 		
 		/* Can test different browser
 		 * - on windows
 		 */
+		// cap.setPlatform(Platform.LINUX);
+		// cap.setBrowserName("chrome");
+		// cap.setBrowserName("firefox");
 		// cap.setPlatform(Platform.WINDOWS);
 		// cap.setBrowserName("opera");
 		// cap.setBrowserName("MicrosoftEdge");
@@ -60,8 +58,11 @@ public class Baseclass {
 		gridFlag=true;
 		
 		if (gridFlag) {
+
 			String sURL = "http://localhost:4444/wd/hub";
 			// String sURL = "http://192.168.100.190:4444/wd/hub";
+			DesiredCapabilities cap = new DesiredCapabilities();
+
 			cap.setPlatform(Platform.WINDOWS);
 			// cap.setBrowserName("opera");
 			cap.setBrowserName("MicrosoftEdge");
@@ -94,28 +95,6 @@ public class Baseclass {
 	}
 	
 	
-	@BeforeTest(enabled=false)
-	public void setup() throws IOException {
-		
-		System.setProperty("webdriver.chrome.driver", "chromedriver");
-
-		driver = new ChromeDriver();
-
-		driver.get("https://www.saucedemo.com");
-
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
-
-		report = new ExtentReports("ExtentReportSD.html");
-		
-		FileInputStream fis = new FileInputStream("data/exceldatasd.xlsx");
-		
-		wbook = new XSSFWorkbook(fis);
-		sheet = wbook.getSheetAt(0);
-	
-			
-	}
-	
 	
 /*
   @AfterMethod(enabled=false)
@@ -131,7 +110,7 @@ public class Baseclass {
 	
 	@AfterTest
 	public void teardown() {
-		System.out.println("VERBOSE: in Teardown");
+		System.out.println("VERBOSE: in teardown()");
 
 		report.endTest(test);
 		report.flush();
