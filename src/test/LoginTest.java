@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -21,10 +22,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import pages.LoginPage;
 
+@Listeners(TestNgListenerEx.class)
 
 public class LoginTest extends Baseclass {
 
-	@Test(enabled=false)
+	@Test(enabled=true, groups= {"loginGrp"}, description="Login using parameters from TestNG xml")
 	@Parameters({"username", "password"})
 	public void Login(String uname, String pass) {
 	
@@ -33,7 +35,7 @@ public class LoginTest extends Baseclass {
 	
 	}
 	
-	@Test(enabled=true, groups={"loginGrp"}, description="Login using uname & pass from xlsx" )
+	@Test(enabled=false, groups={"loginGrp"}, description="Login using uname & pass from xlsx" )
 	public void LoginTestcase2() {
 		
 		LoginPage obj = new LoginPage();

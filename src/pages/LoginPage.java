@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -33,6 +34,8 @@ public class LoginPage {
 		report = Baseclass.report;
 		test = Baseclass.test;
 		
+
+		
 		PageFactory.initElements(driver, this);
 		
 	}
@@ -51,6 +54,9 @@ public class LoginPage {
 	
 	public void loginPage (String uname, String pass) {
 		test = report.startTest("TC: Login SwagLabs");
+		
+		System.out.println("DEBUG: in loginPage(): driver is " + driver);
+		System.out.println("DEBUG: in loginPage(): Baseclass.driver is " + Baseclass.driver);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(UserName));

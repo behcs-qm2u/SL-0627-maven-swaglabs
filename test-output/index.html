@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.LoginTest" hash-for-method="LoginTestcase2">LoginTestcase2</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="test.LoginTest" hash-for-method="Login(standard_user, secret_sauce)">Login(standard_user, secret_sauce)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -163,11 +163,12 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginTestcase2">
-                  </a> <!-- LoginTestcase2 -->
-                  <span class="method-name">LoginTestcase2</span>
+                  <a name="Login(standard_user, secret_sauce)">
+                  </a> <!-- Login(standard_user, secret_sauce) -->
+                  <span class="method-name">Login</span>
+                  <span class="parameters">(standard_user, secret_sauce)</span>
                   <em>
-(Login using uname & pass from xlsx)                  </em>
+(Login using parameters from TestNG xml)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -216,7 +217,7 @@
               <span class="test-group-name">loginGrp</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">LoginTestcase2</span>
+                <span class="method-in-group-name">Login</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -246,17 +247,17 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'LoginTestcase2')
+data.setCell(0, 1, 'Login')
 data.setCell(0, 2, 'test.LoginTest')
-data.setCell(0, 3, 825);
+data.setCell(0, 3, 748);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testcase1b')
 data.setCell(1, 2, 'test.ProductSelectionTest')
-data.setCell(1, 3, 226);
+data.setCell(1, 3, 540);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testcase2')
 data.setCell(2, 2, 'test.ProductSelectionTest')
-data.setCell(2, 3, 190);
+data.setCell(2, 3, 365);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -276,7 +277,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -288,12 +289,14 @@ return data;
                 <br/>
                 <span class="ignored-method-name">testcase1a</span>
                 <br/>
+                <span class="ignored-method-name">remoteSetup</span>
+                <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">test.LoginTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">Login</span>
+                <span class="ignored-method-name">LoginTestcase2</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -307,30 +310,30 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">test.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">setup</span>
+                <span class="method-name">remoteSetup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">LoginTestcase2</span>
-                <span class="method-start">3357 ms</span>
+                <span class="method-name">Login(standard_user, secret_sauce)</span>
+                <span class="method-start">6425 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">test.ProductSelectionTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testcase1b</span>
-                <span class="method-start">4196 ms</span>
+                <span class="method-start">7208 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testcase2</span>
-                <span class="method-start">4426 ms</span>
+                <span class="method-start">7753 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">test.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">4617 ms</span>
+                <span class="method-start">8121 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -7,14 +7,60 @@ Selenium Grid
 ==============
 download selenium standaloe
 
+o Run HUB
 java -jar selenium-server-standalone-3.141.59.jar -role hub
 
 goto <ip>:4444/grid/console
 
-
+o Register a client
 java -Dwebdriver.chrome.driver="chromedriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register/
 
 
 
 //div[@class="inventory_item_name"]//following::div[1]
+
+
+--------------
+Note: 3Jul21
+--------------
+
+json config file for hub & client
+
+o Run HUB
+java -jar selenium-server-standalone-3.141.59.jar -hubConfig myhub.json  my-role hub
+
+
+# RemoteWebdriver hub / node
+
+** NOTE: 
+1) Don't use WIN10 as platform, won't work. Select Platform.WINDOWS instead. See the actual returned value:
+
+ firefox:
+  Actual Cap: Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 89.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210622155641, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 16632, moz:profile: C:\Users\bsdlucky\AppData\L..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: f435a35d-0d03-4428-b849-8ef...}
+
+ edge:
+  Actual Cap: Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 91.0.864.64, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50908}, msedge: {msedgedriverVersion: 91.0.864.64 (3bb5c9989b78b4..., userDataDir: C:\Users\bsdlucky\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 9f7bfee14263be896f7ec7a238e...}
+
+2) On windows machine, *DO NOT* rename the chromedriver.exe to something else, otherwise, it will not work
+   eg. rename to chromedriver_version123.exe, will cause the selenium grid's node to fail.
+   - but it works if called directly :
+     System.setProperty("webdriver.chrome.driver", "K:\\Simplilearn\\SeleniumGrid\\chromedriver_91.0.4472.101.exe");
+   Weird ?!
+
+
+o JENKINS
+
+https://www.jenkins.io/download/
+download the war file
+
+java -jar /usr/share/jenkins.war
+
+Jenkins Global Tool Configurations
+Maven -> add
+Name : M2
+home : (get from mvn -version)
+
+
+
+
 
